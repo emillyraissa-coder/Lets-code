@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: hsl(0, 0%, 100%);
+    }
+
+    div {
+        padding: 50px;
+        border-radius: 5px;
+        box-shadow: 0 4px 10px rgba(248, 242, 242, 0.1);
+        width: 100%;
+        max-width: 400px;
+        background-color: rgb(211, 245, 248);
+    }
+
+    button {
+        display: inline;
+        background-color: rgb(67, 69, 123);
+        color: rgb(11, 10, 9);
+        gap: 20px;
+        
+
+    }
+
+    label {
+        font-size: 12px;
+        font-weight: bold;
+        color: rgb(12, 12, 11);
+    }
+
+    input {
+        width: 100%;
+        padding: 5px 2px;
+        border: 1px solid;
+        border-radius: 5px;
+        font-size: 15px;
+        outline: none;
+        transition: all 0.2s;
+    }
+
+    #grupo-campo input {
+        width: 100%;
+    }
+
+    #grupo-campo {
+        background-color: rgb(137, 177, 142);
+    }
+    .grupo-menor {
+        background-color: rgb(170, 185, 137);
+    }
+    .grupo-baixo {
+        background-color: rgb(145, 195, 207);
+    }
+    .grupo-alto {
+        background-color: rgb(196, 183, 160);
+    }
+    .grupo-maior {
+        background-color: rgb(221, 155, 171);
+    }
+    .grupo-medio {
+        background-color: rgb(173, 176, 239);
+    }
+    
+</style>
+
+<body>
+    <form>
+        <div id="grupo-campo">
+            <h1>1.DADOS PESSOAIS</h1>
+            <label for="name">nome completo*:</label>
+            <input type="text" name="name" id="name" placeholder="digite seu nome completo" required>
+            <label for="apelido">apelido:</label>
+            <input type="text" name="apelido" id="apelido" placeholder="digite seu apelido" required>
+            <br>
+            <label for="email">E-mail*:</label>
+            <input type="email" name="email" id="email" placeholder="seu@email.com" required>
+            <label for="telefone">telefone*:</label>
+            <input type="tel" name="telefone" id="telefone" placeholder="(99)99999-9999" required>
+            <br>
+            <label for="password">senha*:</label>
+            <input type="password" name="password" id="password" placeholder="minimo 6 caracteres" minlength="8"
+                required>
+
+            <label for="confirmar senha">confirmar senha*:</label>
+            <input type="password" name="confirmar senha" id="confirmar senha" placeholder="digite novamente sua senha"
+                required>
+            <br>
+            <label for="idade">idade*:</label>
+            <input type="number" name="idade" id="idade" placeholder="ex.25" required>
+            <label for="data de nascimento">data de nascimento*:</label>
+            <input type="date" name="data de nascimento" id="data de nascimento" required>
+        </div>
+        <br><br>
+
+        <div class="grupo-menor">
+            <h1>2.informções adicionais</h1>
+            <h3>sexo*</h3>
+            <input type="radio" name="sexo" id="feminino" value="feminino" required>
+            <label for="feminino">feminino</label>
+
+            <input type="radio" name="sexo" id="masculino" value="masculino" required>
+            <label for="masculino">masculino</label>
+
+            <input type="radio" name="sexo" id="outros" value="outros" required>
+            <label for="outros">outros</label>
+            <br>
+
+            <h3>interesses (selecionar um ou mais)*</h3>
+            <input type="checkbox" name="tecnologia" id="tecnologia" value="tecnologia">
+            <label for="tecnologia">tecnologia</label>
+
+            <input type="checkbox" name="esportes" id="esportes" value="esportes">
+            <label for="esportes">esportes</label>
+
+            <input type="checkbox" name="música" id="música" value="música">
+            <label for="música">música</label>
+            <br><br>
+
+            <input type="checkbox" name="leitura" id="leitura" value="leitura">
+            <label for="leitura">leitura</label>
+
+            <input type="checkbox" name="viagens" id="viagens" value="viagens">
+            <label for="viagens">viagens</label>
+
+            <input type="checkbox" name="games" id="games" value="games">
+            <label for="games">games</label>
+            <br><br>
+
+            <label for="nivel de experiencia">nível de esperiencia*</label>
+            <br>
+            <input type="range" id="nivel de experiencia" min="1" max="10" value="3">
+        </div>
+        <br><br>
+        <div class="grupo-baixo">
+            <h1>3.documentos e arquivos</h1>
+            <label for="foto">foto de perfil</label>
+            <br>
+            <input type="file" name="foto" id="foto" accept="jpg,jpeg,pnp">
+            <br><br>
+            <label for="curriculo">curriculo (pdf)</label>
+            <br>
+            <input type="file" name="curriculo" id="curriculo" accept=".pdf">
+            <br><br>
+            <button type="submit">enviar</button>
+        </div>
+        <br><br>
+        <div class="grupo-alto">
+            <h1>4.preferencias</h1>
+            <label for="cor">cor favorita</label>
+            <br>
+            <input type="color" name="cor" id="cor">
+            <label for="pais de origem">país de origem*</label>
+            <select id="país" name="país">
+                <option value="Brasil">Brasil</option>
+                <option value="Coreia">Coreia</option>
+                <option value="Italia">Italia</option>
+                <option value="Inglaterra">Inglaterra</option>
+                <option value="Rússia">Rússia</option>
+                <option value="méxico">méxico</option>
+                <option value="nigéria">nigéria</option>
+                <option value="china">china</option>
+            </select>
+            <br><br>
+            <label for="conheceu">como nos conheceu?</label>
+            <br>
+            <textarea name="caixa" id="conheceu"></textarea
+      placeholder>
+      </div>
+     <br><br>
+       
+         <div class="grupo-maior">
+          <h1>5.validações e campos especiais</h1>
+
+     <label for="usuario">nome de usuário(verificar disponibilidade)*</label>
+     <br>
+     <input type="text" name="usuario" id="usuario" 
+      placeholder="digite um nome de usuário" required>
+     <br><br>
+
+     <label for="codigo">código promocional(3 letras)*</label>
+     <br>
+     <input type="text" name="codigo" id="codigo"
+      placeholder="ex:ABC" minlength="3" required>
+     <br><br>
+
+     <label for="conta">tipo de conta(máx.100 caracteres)*</label>
+     <br>
+     <input type="text" name="conta" id="conta"
+      placeholder="digite o tipo de conta desejada" minlength="100" required>
+     <br><br>
+
+     <label for="numero">número mínimo(18 ou mais)*</label>
+     <input type="number" name="" id="" min="18" 
+     max="60" step="1" placeholder="ex:18" required>
+
+     <label for="numero">número máximo(60 ou mais)*</label>
+     <input type="number" name="" id="" min="18" 
+      max="60" step="1" placeholder="ex:60" required>
+     <br><br>
+
+     <label for="oculto">campo oculto (não visivel para o usuário)</label>
+     <br>
+     <input type="number" name="oculto" id="oculto" minlength="7"
+      placeholder="id: 2024-001">
+      </div>
+     <br><br>
+     
+              <div class="grupo-medio">
+    <h1>6.termo e confimações</h1>
+     <input type="checkbox" name="termo" id="termo" required>
+     <label for="termo">li e aceito termos de uso e a politica de privacidade*</label>
+     <br>
+
+     <input type="checkbox" name="desejo" id="desejo">
+     <label for="desejo">desejo receber novidades por email</label>
+     <br><br>
+
+     <label for="adição"> observações adicionais</label>
+     <br>
+     <textarea name="caixa" id="adição" min="0" max="200" 
+      placeholder="algumas informações extra que deseja compartilhar?"
+     ></textarea>
+        </div>
+        <br><br>
+        <div>
+            <h1>7.ações do formulário</h1>
+            <p>teste todas as funcionalidade.</p>
+            <p>preencha os campos,testes as validações e envie o formulário.</p>
+            <button>envie cadastro</button> <button>limpar formulário</button> <button>redefinir campos</button>
+        </div>
+
+    </form>
+</body>
+
+</html>

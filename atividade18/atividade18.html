@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    header {
+        background-color: rgb(12, 12, 38);
+        padding: 15px;
+        margin: 0;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
+
+    button {
+        background-color: rgb(62, 62, 213);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    h2 {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .cards {
+        display: flex;
+        margin-top: 50px;
+        gap: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .quadrados,
+    .quadrado2,
+    .quadrado3,
+    .quadrado4 {
+        width: 250px;
+        height: 250px;
+        padding: 50px;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .banner2 {
+        background-color: rgb(7, 7, 43);
+        color: white;
+        flex-direction: row;
+        display: flex;
+    }
+
+    .banner2 > div > button {
+        margin-top: 20px;
+    }
+
+    #banner-image {
+        width: 300px;
+        height: 200px;
+        align-items: end;
+        
+    }
+    footer {
+        background-color: rgb(12, 12, 53);
+        color: white;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+/* Estilo base do botão hambúrguer (Escondido no Desktop) */
+.menu-mobile {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+/* Regras para Mobile */
+    nav { 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .menu-mobile {
+        display: block; /* Mostra o hambúrguer no celular */
+    }
+    ul {
+        display: none; /* Esconde o menu por padrão no celular */
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    
+
+
+</style>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <a href="nexus">
+                    <h1>NEXUS</h1>
+                </a>
+                <a href="inicio">inicio</a>
+                <a href="sobre">sobre</a>
+                <a href="servicos">serviços</a>
+                <a href="portfolio">portfólio</a>
+                <a href="blog">blog</a>
+                <a href="contato">contato</a>
+                <button>fale conosco</button>
+            </ul>
+            <button class="menu-mobile">☰</button>
+        </nav>
+    </header>
+    <img src="gettyimages-146508834.png" alt="predios">
+    <br>
+    <h2>NOSSOS SERVIÇOS</h2>
+    <SEction class="cards">
+        <div class="quadrados">
+            <h2>sites responsivos</h2>
+            <p>sites modernos que se adaptam a qualquer tela e dispositivo.</p>
+        </div>
+        <div class="quadrado2">
+            <h2>sistemas web</h2>
+            <p>soluções personalizados para otimizar os processos da sua empresa.</p>
+        </div>
+        <div class="quadrado3">
+            <h2>marketing digital</h2>
+            <p>estratégias para atrair. engajar e converter seus cliestes.</p>
+        </div>
+        <div class="quadrado4">
+            <h2>desing criativo</h2>
+            <p>layouts únicos que transmitem a identidade da sua marca.</p>
+        </div>
+    </SEction>
+    <br><br>
+    <div class="banner2">
+        <div>
+            <h2>sobre nós</h2>
+            <p> somos uma equipe apaixonada por tecnologia e desing. nosso objetivo é 
+                transformar ideia sem soluções digitais inovadoras.</p>
+            <button>começa mais</button>
+        </div>
+        <img id="banner-image" src="istockphoto.png " alt="pessoas trabalhando">
+    </div>
+    <footer>
+        <div class="rodape">
+            <h3>NEXUS</h3>
+            <p>tecnologia que conecta,soluções que transformam.</p>
+        </div>
+        <div class="rodape2">
+            <h3>LINKS RÁPIDOS</h3>
+            <p>inicio</p>
+            <p>sobre</p>
+            <p>serviços</p>
+            <p>portfólio</p>
+            <p>blog</p>
+            <p>contato</p>
+        </div>
+        <div class="rodape3">
+            <h3>serviços</h3>
+            <p>sites responsivos</p>
+            <p>sistemas web</p>
+            <p>marketing digital</p>
+            <p>desing criativo</p>
+        </div>
+        <div class="rodape4">
+            <h3>CONTATO</h3>
+            <p>email: contato@nexus.com</p>
+            <p>telefone: (11) 99999-9999</p>
+            <p>são paulo, sp</p>
+        </div>
+        <p>&copy; 2023 NEXUS. Todos os direitos reservados.</p>
+    </footer>
+    
+</body>
+
+</html>

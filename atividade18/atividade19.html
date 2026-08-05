@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        header {
+            background-color: rgb(12, 12, 38);
+            padding: 15px 5%;
+            position: relative;
+            z-index: 10;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+      
+        #menu-toggle {
+            display: none;
+        }
+
+        .menu-mobile {
+            display: none;
+            color: white;
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+            gap: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        button {
+            background-color: rgb(62, 62, 213);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        
+        .hero {
+            position: relative;
+            background: linear-gradient(90deg, rgba(12, 12, 38, 0.9) 0%, rgba(12, 12, 38, 0.6) 100%), 
+                        url('gettyimages-146508834.png') center/cover no-repeat;
+            color: white;
+            padding: 80px 10%;
+            min-height: 380px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-text {
+            max-width: 500px;
+        }
+
+        .hero-text h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .hero-text p {
+            margin-bottom: 25px;
+            color: #ddd;
+            line-height: 1.5;
+        }
+
+        /* --- SERVIÇOS E CARDS --- */
+        h2.titulo-servicos {
+            text-align: center;
+            margin: 40px 0 20px;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        .titulo-servicos::after {
+            content: '';
+            display: block;
+            width: 35px;
+            height: 3px;
+            background-color: rgb(62, 62, 213);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
+        }
+
+        .quadrados,
+        .quadrado2,
+        .quadrado3,
+        .quadrado4 {
+            background-color: white;
+            width: 100%;
+            height: auto;
+            min-height: 220px;
+            padding: 25px 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .card-icon {
+            margin-bottom: 15px;
+        }
+
+        .cards h2 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .cards p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .banner2 {
+            background-color: rgb(7, 7, 43);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 10%;
+            gap: 40px;
+        }
+
+        .banner2 > div {
+            flex: 1;
+        }
+
+        .banner2 h2 {
+            text-align: left;
+            margin-bottom: 15px;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        .banner2 p {
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        .banner2 > div > button {
+            margin-top: 20px;
+        }
+
+        #banner-image {
+            width: 400px;
+            max-width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: rgb(12, 12, 53);
+            color: white;
+            padding: 40px 10% 20px;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 30px;
+        }
+
+        footer details summary {
+            list-style: none;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        footer details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        footer details summary .arrow {
+            display: none;
+        }
+
+        footer p, footer a {
+            color: #aaa;
+            font-size: 13px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        footer h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .copyright {
+            grid-column: 1 / -1;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 20px;
+            color: #777;
+            font-size: 12px;
+        }
+
+        .mobile-sobre-accordion {
+            display: none;
+        }
+
+        /* MEDIA QUERIES  */
+
+        /* DESKTOP (1200px ou mais) */
+        @media screen and (min-width: 1200px) {
+            footer details summary {
+                pointer-events: none;
+            }
+            footer details[open] summary {
+                margin-bottom: 15px;
+            }
+        }
+
+        /* TABLET (768px - 1199px) */
+        @media screen and (min-width: 768px) and (max-width: 1199px) {
+            .menu-mobile {
+                display: block;
+            }
+
+            ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgb(12, 12, 38);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                text-align: center;
+            }
+
+            #menu-toggle:checked ~ ul {
+                display: flex;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .banner2 {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .banner2 h2 {
+                text-align: center;
+            }
+
+            #banner-image {
+                width: 100%;
+                height: 250px;
+            }
+
+            footer {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .rodape {
+                display: none;
+            }
+
+            footer details {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            footer details summary {
+                padding: 15px 0;
+                margin-bottom: 0;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            footer details summary .arrow {
+                display: inline;
+                font-size: 10px;
+            }
+
+            footer details div {
+                padding-bottom: 15px;
+            }
+        }
+
+        /* MOBILE (até 767px) */
+        @media screen and (max-width: 767px) {
+            .menu-mobile {
+                display: block;
+            }
+
+            ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgb(12, 12, 38);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                text-align: center;
+            }
+
+            #menu-toggle:checked ~ ul {
+                display: flex;
+            }
+
+            .hero {
+                padding: 40px 5%;
+            }
+
+            .hero-text h1 {
+                font-size: 24px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .quadrados,
+            .quadrado2,
+            .quadrado3,
+            .quadrado4 {
+                flex-direction: row;
+                text-align: left;
+                align-items: center;
+                gap: 15px;
+                padding: 15px;
+                min-height: auto;
+            }
+
+            .cards h2 {
+                text-align: left;
+                font-size: 15px;
+            }
+
+            .card-icon {
+                margin-bottom: 0;
+            }
+
+            /* Esconde o Sobre Nós principal no celular */
+            .banner2 {
+                display: none;
+            }
+
+            /* Exibe o Sobre Nós dentro do rodapé como Sanfona */
+            .mobile-sobre-accordion {
+                display: block;
+            }
+
+            footer {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .rodape {
+                display: none;
+            }
+
+            footer details {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            footer details summary {
+                padding: 15px 0;
+                margin-bottom: 0;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            footer details summary .arrow {
+                display: inline;
+                font-size: 10px;
+            }
+
+            footer details div {
+                padding-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="nexus" class="logo">
+                <h1>NEXUS</h1>
+            </a>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-mobile">☰</label>
+
+            <ul>
+                <li><a href="inicio">INÍCIO</a></li>
+                <li><a href="sobre">SOBRE</a></li>
+                <li><a href="servicos">SERVIÇOS</a></li>
+                <li><a href="portfolio">PORTFÓLIO</a></li>
+                <li><a href="blog">BLOG</a></li>
+                <li><a href="contato">CONTATO</a></li>
+                <li><button>FALE CONOSCO</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Soluções digitais que impulsionam seu negócio</h1>
+            <p>Desenvolvemos sites, sistemas e estratégias digitais que geram resultados reais.</p>
+            <button>SAIBA MAIS</button>
+        </div>
+    </section>
+
+    <h2 class="titulo-servicos">NOSSOS SERVIÇOS</h2>
+
+    <section class="cards">
+        <div class="quadrados">
+            <div class="card-icon">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3e3ed5" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div>
+                <h2>sites responsivos</h2>
+                <p>sites modernos que se adaptam a qualquer tela e dispositivo.</p>
+            </div>
+        </div>
+        <div class="quadrado2">
+            <div class="card-icon">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3e3ed5" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div>
+                <h2>sistemas web</h2>
+                <p>soluções personalizados para otimizar os processos da sua empresa.</p>
+            </div>
+        </div>
+        <div class="quadrado3">
+            <div class="card-icon">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3e3ed5" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><path d="M4 11l4-4 4 4 6-6"/></svg>
+            </div>
+            <div>
+                <h2>marketing digital</h2>
+                <p>estratégias para atrair. engajar e converter seus clientes.</p>
+            </div>
+        </div>
+        <div class="quadrado4">
+            <div class="card-icon">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3e3ed5" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10c0-2.5-2-2.5-2-2.5h-1.5a1.5 1.5 0 0 1-1.5-1.5V6a2 2 0 0 0-2-2z"/></svg>
+            </div>
+            <div>
+                <h2>design criativo</h2>
+                <p>layouts únicos que transmitem a identidade da sua marca.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="banner2">
+        <div>
+            <h2>sobre nós</h2>
+            <p>somos uma equipe apaixonada por tecnologia e design. nosso objetivo é transformar ideias em soluções digitais inovadoras.</p>
+            <button>conheça mais</button>
+        </div>
+        <img id="banner-image" src="istockphoto.png" alt="pessoas trabalhando">
+    </div>
+
+    <footer>
+        <div class="rodape">
+            <h3>NEXUS</h3>
+            <p>tecnologia que conecta, soluções que transformam.</p>
+        </div>
+
+        <details class="mobile-sobre-accordion" open>
+            <summary>SOBRE NÓS <span class="arrow">▼</span></summary>
+            <div>
+                <p>somos uma equipe apaixonada por tecnologia e design. nosso objetivo é transformar ideias em soluções digitais inovadoras.</p>
+                <button style="margin: 10px 0;">conheça mais</button>
+                <img src="istockphoto.png" alt="pessoas trabalhando" style="width: 100%; border-radius: 5px; margin-top: 10px;">
+            </div>
+        </details>
+
+        <details open>
+            <summary>LINKS RÁPIDOS <span class="arrow">▼</span></summary>
+            <div>
+                <a href="inicio">inicio</a>
+                <a href="sobre">sobre</a>
+                <a href="servicos">serviços</a>
+                <a href="portfolio">portfólio</a>
+                <a href="blog">blog</a>
+                <a href="contato">contato</a>
+            </div>
+        </details>
+
+        <details open>
+            <summary>SERVIÇOS <span class="arrow">▼</span></summary>
+            <div>
+                <p>sites responsivos</p>
+                <p>sistemas web</p>
+                <p>marketing digital</p>
+                <p>design criativo</p>
+            </div>
+        </details>
+
+        <details open>
+            <summary>CONTATO <span class="arrow">▼</span></summary>
+            <div>
+                <p>email: contato@nexus.com</p>
+                <p>telefone: (11) 99999-9999</p>
+                <p>são paulo, sp</p>
+            </div>
+        </details>
+
+        <div class="copyright">
+            <p>&copy; 2025 NEXUS. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

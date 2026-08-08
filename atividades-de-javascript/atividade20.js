@@ -9,10 +9,8 @@ let media = (nota1 + nota2 + nota3) / 3;
 //exibe no console a media do aluno
 console.log(`A aluna ${nome} obteve a media ${media.toFixed(2)}`);
 
-//peso e altura
+
 let peso = 45;
 let altura = 1.52;
-//cálculo do IMC
 let imc = peso / (altura * altura);
-//exibe no console
 console.log(`O IMC é: ${imc.toFixed(2)}`);

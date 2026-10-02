@@ -2,7 +2,7 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=h1, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body>
@@ -10,18 +10,24 @@
     <p>faça login para acessar sua conta</p>
     <form id="cadastro">
       <div class="name">
-        <label for="name">nome*:</label>
+        <label id="label-name" for="name">nome*:</label>
         <input type="text" name="name" id="name" />
+        <br />
+        <span id="alert-name"></span>
       </div>
       <br />
       <div class="email">
-        <label for="email">email*:</label>
+        <label id="label-email" for="email">email*:</label>
         <input type="email" name="E-mail" id="email" />
+        <br />
+        <span id="alert-email"></span>
       </div>
       <br />
       <div class="idade">
-        <label for="idade">idade*:</label>
+        <label id="label-idade" for="idade">idade*:</label>
         <input type="number" name="idade" id="idade" />
+        <br />
+        <span id="alert-idade"></span>
         <br /><br />
         <button>enviar</button>
       </div>
@@ -30,3 +36,4 @@
     <script src="atividade24.js"></script>
   </body>
 </html>
+
